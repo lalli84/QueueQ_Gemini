@@ -1,0 +1,37 @@
+// Implementing java collection framework  on scenario-based questions.
+//  Task 4 - Queue interface 
+
+import java.util.*;
+
+class Main{
+    
+    public static void main(String args[]){
+        Queue<Integer> q1 = new LinkedList<Integer>();
+        Queue<Integer> q2 = new LinkedList<Integer>();
+        
+        int sum=0;
+        for(int i=1; i<=6; i++)
+        {
+            q1.add(i);
+            sum=sum+i;
+        }
+        System.out.println("Queue1 Elements: "+q1);
+        System.out.println("Sum is :"+sum);
+        
+        System.out.print("Removed Elements: ");
+        for(int j=1; j<=2; j++){
+            int removed_ele1 = q1.remove();
+            System.out.print(removed_ele1+" ");
+            q2.add(removed_ele1);
+        }
+        
+        System.out.println("\nExcisted Elements : "+q1);
+        
+        Iterator<Integer> itr1 = q1.iterator();
+        while(itr1.hasNext())
+        {
+            q2.add(itr1.next());
+        }
+        System.out.println("Queue2 Elements: " + q2);
+    }
+}
